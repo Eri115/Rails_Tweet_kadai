@@ -1,0 +1,27 @@
+
+<h1>🌼MyTwitter🌼</h1>
+
+<div class="button-container">
+<%= link_to "新しい投稿",new_post_path, class: "link-button"%></div>
+<ul> 
+  <% @posts.each do |post| %>
+  <li>
+    <p><%= post.content %></p>
+    <span>
+      <small><%= post.created_at %></small>
+    </span>
+    <div class = "edit-delete-wrapper">
+    <p class="button">
+    <%= link_to "編集", edit_post_path(post)%>
+    <%= button_to"削除", post_path(post),method: :delete%>
+    </p>
+    </div>
+  </li>
+  <% end %>
+
+</ul>
+
+
+
+
+<%= stylesheet_link_tag "application.css", :media => "all" %>

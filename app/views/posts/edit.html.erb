@@ -1,0 +1,16 @@
+<h1>投稿編集</h1>
+
+<%= form_with model: @post, html: {class: "form-container"} do |form| %>
+
+<div class="form-input">
+<%= form.label :投稿する%> <%= form.text_area :content %>
+</div>
+
+
+<div class="button-container"><%= form.submit "更新", class: "link-button" %></div>
+<% end %>
+
+<div class="button"><%= link_to "ツイート一覧表示", 'http://127.0.0.1:3000/posts',id: "home"%></div>
+
+
+<%= stylesheet_link_tag "application.css", :media => "all" %></div>
